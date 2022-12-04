@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<style>
+    body {
+font-family: Arial, sans-serif;
+
+
+}
+
+a {
+color: #00bd00;
+}
+* {
+box-sizing: border-box;
+}
+.signin {
+width: 500px;
+padding: 16px;
+margin: 0 auto;
+background-color: white;
+}
+input[type=text], input[type=password] {
+width: 100%;
+padding: 15px;
+margin: 5px 0 22px 0;
+display: inline-block;
+border: none;
+background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+background-color: #ddd;
+
+}
+hr {
+border: 1px solid #f1f1f1;
+margin-bottom: 25px;
+}
+.submit {
+background-color: #0900bd;
+color: white;
+padding: 15px 18px;
+margin: 8px 0;
+border: none;
+cursor: pointer;
+width: 100%;
+opacity: 0.9;
+}
+.submit:hover {
+opacity: 200;
+}
+.login {
+background-color: #ffffff;
+text-align: center;
+}
+</style>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       
+        <form action="" method="POST" onsubmit="login()">
+        <div class="signin">
+         
+        <h1>Đăng nhập</h1>
+        <p>Vui lòng điền thông tin để đăng nhập</p>
+        <hr>
+        <label for="username"><b>Tên đăng nhập</b></label>
+        <input type="text" placeholder="Họ và tên" name="username" id="username">
+        <label for="password"><b>Mật khẩu</b></label>
+        <input type="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required placeholder="******" name="password" id="password">
+        <hr>
+       <button type="submit" onkeyup="" class="submit">Đăng nhập</button>
+        </div>
+        
+        <div class="register login">
+        <p>Bạn chưa có tài khoản ? <a href="SignUp.html">Đăng ký</a>.</p>
+        </div>
+        </form>
+        <script>
+            function validate(){
+              var u = document.getElementById("username").value;
+              var p = document.getElementById("password").value;
+          if(u == ""){
+            alert("vui long dang nhap");
+            return false;
+          }   
+          if(p == "") {
+            alert("vui long nhap mk");
+            return false
+          }   
+          localStorage.setItem("usernam".u);
+          localStorage.setItem("password".p);
+          alert("dang nhap thanh cong");
+}         
+   
+   
+   
+
+        </script>
+        </body>
+</html>
