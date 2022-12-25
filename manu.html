@@ -36,8 +36,8 @@
   }
   .carousel-inner img {
       -webkit-filter: grayscale(90%);
-      filter: grayscale(30%); /* make all photos black and white */ 
-     width: 110%; /* Set width to 100% */
+      filter: grayscale(30%); 
+     width: 110%; 
       margin: auto;
   }
   .carousel-caption h3 {
@@ -45,7 +45,7 @@
   }
   @media (max-width: 600px) {
     .carousel-caption {
-      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+      display: none; 
     }
   }
   .bg-1 {
@@ -165,10 +165,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#vinesh">HOME</a></li>
+    <li><a href="">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#tour">TOUR</a></li>
         <li><a href="#player">PLAYER</a></li>
+        
+        <li id="username"></li>
       </ul>
     </div>
   </div>
@@ -432,7 +434,20 @@
   <p> <a href="https://www.linkedin.com/in/vinesh-kumar-904493167/" data-toggle="tooltip" title="Visit My Profile">® Vinesh Kumar</a></p> 
 </footer>
 
-
+<script>
+  if(localStorage.getItem("userHientai") ){
+    let userName=localStorage.getItem("userHientai")
+    document.getElementById("username").innerHTML +=`<a   >Xin chao ${userName}</a>`
+    document.getElementById("username").innerHTML +=`<a ' onclick ="logout()" >&emsp;&emsp;&emsp;&emsp; LOGOUT</a>`
+}else{
+   
+    document.getElementById("username").innerHTML +="<a  href='sign.html' >LOGIN</a>"
+}
+function logout(){
+    localStorage.removeItem("userHientai");
+    window.location.reload();
+}
+</script>
 
 </body>
 </html>

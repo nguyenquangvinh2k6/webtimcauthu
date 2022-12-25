@@ -348,6 +348,7 @@ footer a {
              u = "";
              p= "";
              p1= "";
+             
         }
       function login()  {
         var i = document.getElementById("name1").value;
@@ -364,8 +365,10 @@ footer a {
         userInfor = JSON.parse(localStorage.getItem(i));
         if (i == userInfor[0] && h == userInfor[1]){
             alert("dang nhap thanh cong")
+            localStorage.setItem("userHientai",i);
         }else{
             alert("dang nhap ko thanh cong");
+            
         }
         window.location.href = "http://127.0.0.1:5500/manu.html"
       }
